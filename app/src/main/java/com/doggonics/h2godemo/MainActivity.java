@@ -193,9 +193,14 @@ public class MainActivity<TAG> extends AppCompatActivity {
 
                 if(display_mode==0 && state==SERVICE_STATE){tv_big_display.setText(time);}
 
-                if(display_mode==1 && state==SERVICE_STATE){tv_big_display.setText(sb_throttle.getProgress()+" rpm");}
+                if(display_mode==1 && state==SERVICE_STATE && sb_throttle.getProgress()>RPM_SERVICE_START){
+                    tv_big_display.setText(sb_throttle.getProgress()+" rpm");
+                }
 
-                if(is_started && start_service &&sb_throttle.getProgress()>RPM_SERVICE_START){ seconds++;}
+                if(display_mode==1 && state==SERVICE_STATE && sb_throttle.getProgress()<RPM_SERVICE_START){
+                    tv_big_display.setText("#"+str_hash.substring(2,str_hash.length()));
+                }
+                if(start_service &&sb_throttle.getProgress()>RPM_SERVICE_START){ seconds++;}
                 handler.postDelayed(this,1000);
             }
         });
