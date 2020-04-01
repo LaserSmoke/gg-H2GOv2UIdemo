@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:id="@+id/ll_throttle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="50dp">
+        <TextView
+            android:id="@+id/tv_sbValue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="20dp"
+            android:layout_marginBottom="5dp"
+            android:text="Throttle"
+            android:textSize="25sp"
+            android:textColor="@android:color/background_dark"/>
+
+        <SeekBar
+            style="@style/Widget.AppCompat.SeekBar"
+            android:id="@+id/sb_throttle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_weight="1"
+            android:maxHeight="50dp"
+            android:minHeight="10dp"
+            android:paddingStart="25dp"
+            android:paddingEnd="25dp"
+            android:progressTint="@color/colorPrimary"
+            android:max="4000"
+            android:progress="0"
+            android:progressBackgroundTint="@android:color/black"
+            android:progressBackgroundTintMode="src_over"
+            android:thumb="@mipmap/ic_thumb"
+            android:thumbTint="@android:color/holo_green_dark" />
+        <TextView
+            android:id="@+id/tv_rpm"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginRight="10dp"
+            android:gravity="end"
+            android:text="0 rpm"
+            android:paddingRight="20dp"
+            android:textSize="20dp"/>
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/ll_throttle"
+        android:background="@drawable/case_outline"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="60dp"
+        >
+        <LinearLayout
+            android:id="@+id/ll_display1"
+            android:layout_width="175dp"
+            android:layout_height="75dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/tv_display_bkg"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:id="@+id/ll_display"
+                android:layout_width="175dp"
+                android:layout_height="75dp"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_centerHorizontal="true">
+
+                <TextView
+                    android:id="@+id/tv_displayLine2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="15"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center_horizontal"
+                    android:text="READY"
+                    android:textColor="@android:color/background_dark"/>
+
+                <TextView
+                    android:id="@+id/tv_displayLine1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_gravity="center"
+                    android:gravity="center_horizontal"
+                    android:layout_marginBottom="12dp"
+                    android:text="0"
+                    android:textColor="@android:color/background_dark"
+                    android:textSize="25sp" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/img_battery"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="bottom"
+                android:rotation="90"
+                android:layout_marginRight="6dp"
+                android:src="@drawable/ic_bat_indicator" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/img_rpm_status"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_weight="1"
+            android:layout_toLeftOf="@id/ll_display1"
+            android:layout_alignBottom="@id/ll_display1"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/round_led"/>
+
+        <LinearLayout
+            android:id="@+id/ll_buttons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@id/ll_display1"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="30dp"
+            android:gravity="center">
+
+            <Space
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/button_power"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:scaleType="fitCenter"
+                android:paddingLeft="0dp"
+                android:background="@drawable/round_button"
+                android:src="@drawable/ic_power"/>
+            <Space
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/button_start"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:scaleType="fitCenter"
+                android:paddingLeft="0dp"
+                android:background="@drawable/round_button"
+                android:src="@drawable/ic_start"/>
+            <Space
+                android:layout_width="20dp"
+                android:layout_height="20dp"/>
+
+            <ImageButton
+                android:id="@+id/button_display"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/round_button"
+                android:drawablePadding="@drawable/ic_launcher_background"
+                android:padding="8dp"
+                android:scaleType="fitCenter"
+                android:src="@android:drawable/ic_menu_rotate" />
+
+            <Space
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+
+
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>
