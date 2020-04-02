@@ -912,6 +912,7 @@ id unchecked
 id uniform
 id up
 id useLogo
+id versionName
 id withText
 id wrap
 id wrap_content
@@ -1000,6 +1001,7 @@ string abc_toolbar_collapse_description
 string app_name
 string search_menu_title
 string status_bar_notification_info_overflow
+string versionName
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style Animation_AppCompat_Dialog

@@ -64,12 +64,12 @@
         "source": "C:\\Users\\soggy\\AndroidStudioProjects\\H2GOdemo2\\app\\src\\main\\res\\drawable-v24\\ic_launcher_foreground.xml"
     },
     {
-        "merged": "C:\\Users\\soggy\\AndroidStudioProjects\\H2GOdemo2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_motorcycle.png.flat",
-        "source": "C:\\Users\\soggy\\AndroidStudioProjects\\H2GOdemo2\\app\\src\\main\\res\\drawable-xhdpi\\ic_motorcycle.png"
-    },
-    {
         "merged": "C:\\Users\\soggy\\AndroidStudioProjects\\H2GOdemo2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_power.png.flat",
         "source": "C:\\Users\\soggy\\AndroidStudioProjects\\H2GOdemo2\\app\\src\\main\\res\\drawable-hdpi\\ic_power.png"
+    },
+    {
+        "merged": "C:\\Users\\soggy\\AndroidStudioProjects\\H2GOdemo2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_motorcycle.png.flat",
+        "source": "C:\\Users\\soggy\\AndroidStudioProjects\\H2GOdemo2\\app\\src\\main\\res\\drawable-xhdpi\\ic_motorcycle.png"
     },
     {
         "merged": "C:\\Users\\soggy\\AndroidStudioProjects\\H2GOdemo2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_bat_indicator.png.flat",

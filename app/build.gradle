@@ -14,12 +14,17 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            resValue "string", "versionName", "${defaultConfig.versionCode}.${defaultConfig.versionName}"
         }
+        debug{
+            resValue "string", "versionName", "${defaultConfig.versionCode}.${defaultConfig.versionName}"
+        }
+
     }
 	applicationVariants.all {
         variant ->
             variant.outputs.all {
-                outputFileName = "${applicationName}${variant.buildType.name}${defaultConfig.versionName}.apk"
+                outputFileName = "${applicationName}_${versionCode}.${defaultConfig.versionName}.apk"
             }
     }
 }

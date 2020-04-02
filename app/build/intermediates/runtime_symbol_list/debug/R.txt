@@ -911,9 +911,10 @@ int id unchecked 0x7f0700c6
 int id uniform 0x7f0700c7
 int id up 0x7f0700c8
 int id useLogo 0x7f0700c9
-int id withText 0x7f0700ca
-int id wrap 0x7f0700cb
-int id wrap_content 0x7f0700cc
+int id versionName 0x7f0700ca
+int id withText 0x7f0700cb
+int id wrap 0x7f0700cc
+int id wrap_content 0x7f0700cd
 int integer abc_config_activityDefaultDur 0x7f080000
 int integer abc_config_activityShortDur 0x7f080001
 int integer cancel_button_image_alpha 0x7f080002
@@ -999,6 +1000,7 @@ int string abc_toolbar_collapse_description 0x7f0c001a
 int string app_name 0x7f0c001b
 int string search_menu_title 0x7f0c001c
 int string status_bar_notification_info_overflow 0x7f0c001d
+int string versionName 0x7f0c001e
 int style AlertDialog_AppCompat 0x7f0d0000
 int style AlertDialog_AppCompat_Light 0x7f0d0001
 int style Animation_AppCompat_Dialog 0x7f0d0002

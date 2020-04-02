@@ -15,6 +15,7 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 
 
+
 public class MainActivity<TAG> extends AppCompatActivity {
 
     private static SeekBar sb_throttle;
@@ -67,7 +68,7 @@ public class MainActivity<TAG> extends AppCompatActivity {
 
         vw_battery_indicator.setVisibility(View.INVISIBLE);
         tv_small_display.setVisibility(View.INVISIBLE);
-        tv_big_display.setVisibility(View.INVISIBLE);
+
 
         final Runnable btntime_delay=new Runnable() {
             @Override

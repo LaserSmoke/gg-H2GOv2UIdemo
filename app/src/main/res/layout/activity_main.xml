@@ -4,6 +4,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
+    <TextView
+        android:id="@+id/versionName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/versionName"
+        android:textSize="20dp"
+        />
 
     <LinearLayout
         android:id="@+id/ll_throttle"
@@ -96,7 +106,7 @@
                     android:layout_gravity="center"
                     android:gravity="center_horizontal"
                     android:layout_marginBottom="12dp"
-                    android:text="0"
+                    android:text="00;00;00"
                     android:textColor="@android:color/background_dark"
                     android:textSize="25sp" />
             </LinearLayout>
