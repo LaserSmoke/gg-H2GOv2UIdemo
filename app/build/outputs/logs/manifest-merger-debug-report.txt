@@ -74,14 +74,14 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\so
 		ADDED from C:\Users\soggy\AndroidStudioProjects\H2GOdemo2\app\src\main\AndroidManifest.xml:6:9-35
 	android:theme
 		ADDED from C:\Users\soggy\AndroidStudioProjects\H2GOdemo2\app\src\main\AndroidManifest.xml:11:9-40
-activity#com.doggonics.h2godemo.MainActivity
+activity#com.doggonics.h2godemo2.MainActivity
 ADDED from C:\Users\soggy\AndroidStudioProjects\H2GOdemo2\app\src\main\AndroidManifest.xml:12:9-20:20
 	android:screenOrientation
 		ADDED from C:\Users\soggy\AndroidStudioProjects\H2GOdemo2\app\src\main\AndroidManifest.xml:14:13-49
 	android:configChanges
 		ADDED from C:\Users\soggy\AndroidStudioProjects\H2GOdemo2\app\src\main\AndroidManifest.xml:15:13-63
 	android:name
-		ADDED from C:\Users\soggy\AndroidStudioProjects\H2GOdemo2\app\src\main\AndroidManifest.xml:13:13-41
+		ADDED from C:\Users\soggy\AndroidStudioProjects\H2GOdemo2\app\src\main\AndroidManifest.xml:13:13-64
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
 ADDED from C:\Users\soggy\AndroidStudioProjects\H2GOdemo2\app\src\main\AndroidManifest.xml:16:13-19:29
 action#android.intent.action.MAIN

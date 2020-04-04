@@ -1,4 +1,4 @@
-package com.doggonics.h2godemo;
+package com.doggonics.h2godemo2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -14,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+import com.doggonics.h2godemo.R;
 
 
 public class MainActivity<TAG> extends AppCompatActivity {
@@ -28,7 +29,7 @@ public class MainActivity<TAG> extends AppCompatActivity {
     private static TextView tv_rpm;
     private static ViewGroup ll_throttle;
     private static ViewGroup ll_display;
-    private static ImageButton btn_powerON;
+//    private static ImageButton btn_powerON;
 
     private static final String TAG="H2GO";
     private static final Integer RPM_SERVICE_START=500;
@@ -45,6 +46,7 @@ public class MainActivity<TAG> extends AppCompatActivity {
     private boolean is_started=false;
     private Integer state=READY_STATE;
     private boolean start_service=false;
+    private Long hashCode;
 
 
     private int display_mode=0;
@@ -59,7 +61,7 @@ public class MainActivity<TAG> extends AppCompatActivity {
         tv_small_display=(TextView)findViewById(R.id.tv_displayLine2);
         btn_display_mode=(ImageButton)findViewById(R.id.button_display);
         btn_start =(ImageButton)findViewById(R.id.button_start);
-        btn_powerON=(ImageButton)findViewById(R.id.button_power);
+//        btn_powerON=(ImageButton)findViewById(R.id.button_power);
         vw_battery_indicator=(ImageView)findViewById(R.id.img_battery);
         tv_rpm=(TextView)findViewById(R.id.tv_rpm);
         myButtonView=(ViewGroup)findViewById(R.id.ll_buttons);
@@ -70,21 +72,24 @@ public class MainActivity<TAG> extends AppCompatActivity {
         tv_small_display.setVisibility(View.INVISIBLE);
 
 
-        final Runnable btntime_delay=new Runnable() {
-            @Override
-            public void run() {
-                btn_start.setEnabled(true);
-                btn_display_mode.setEnabled(true);
-            }
-        };
-
-        btn_powerON.setOnClickListener(new View.OnClickListener() {
+        /*btn_powerON.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 is_started=start_module(is_started,vw_battery_indicator,ll_display,sb_throttle,imgv_rpm_indicator);
             }
-        });
+        });*/
 
+
+        btn_start.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View view) {
+                if(btn_display_mode.isPressed()){
+                    Log.i(TAG,"Double Press");
+                    is_started=start_module(is_started,vw_battery_indicator,ll_display,sb_throttle,imgv_rpm_indicator);
+                }
+                return true;
+            }
+        });
         btn_start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -92,7 +97,6 @@ public class MainActivity<TAG> extends AppCompatActivity {
                     start_service=false;
                     state=READY_STATE;
                     tv_small_display.setText("READY");
-
                 }
                 else {
                     start_service=true;
@@ -102,6 +106,13 @@ public class MainActivity<TAG> extends AppCompatActivity {
                     tv_big_display.setText("00:00:00");
 
                 }
+            }
+        });
+
+        btn_display_mode.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View view) {
+                return true;
             }
         });
 
@@ -189,8 +200,11 @@ public class MainActivity<TAG> extends AppCompatActivity {
                 String time=String.format("%02d:%02d:%02d",hours,minutes,secs);
                 if(display_mode==0 && state==READY_STATE){tv_big_display.setText(time);}
 
-                String str_hash=Integer.toString(time.hashCode());
-                if(display_mode==1 && state==READY_STATE){tv_big_display.setText("#"+str_hash.substring(2,str_hash.length()));}
+                hashCode= Math.abs(Long.valueOf(Math.abs(time.hashCode())*100));
+                String str_hash=Long.toString(hashCode);
+
+
+                if(display_mode==1 && state==READY_STATE){tv_big_display.setText("#"+str_hash);}
 
                 if(display_mode==0 && state==SERVICE_STATE){tv_big_display.setText(time);}
 
@@ -199,7 +213,7 @@ public class MainActivity<TAG> extends AppCompatActivity {
                 }
 
                 if(display_mode==1 && state==SERVICE_STATE && sb_throttle.getProgress()<RPM_SERVICE_START){
-                    tv_big_display.setText("#"+str_hash.substring(2,str_hash.length()));
+                    tv_big_display.setText("#"+str_hash);
                 }
                 if(start_service &&sb_throttle.getProgress()>RPM_SERVICE_START){ seconds++;}
                 handler.postDelayed(this,1000);

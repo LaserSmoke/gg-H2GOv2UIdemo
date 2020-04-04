@@ -779,7 +779,6 @@ id blocking
 id bottom
 id buttonPanel
 id button_display
-id button_power
 id button_start
 id center
 id center_horizontal
