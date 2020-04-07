@@ -3,7 +3,7 @@
     package="com.doggonics.h2godemo2"
     android:targetSandboxVersion="2"
     android:versionCode="2"
-    android:versionName="1.1" >
+    android:versionName="1.2" >
 
     <uses-sdk
         android:minSdkVersion="23"
@@ -18,7 +18,6 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:testOnly="true"
         android:theme="@style/AppTheme" >
         <activity
             android:name="com.doggonics.h2godemo2.MainActivity"

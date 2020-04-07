@@ -97,6 +97,7 @@ public class MainActivity<TAG> extends AppCompatActivity {
                     start_service=false;
                     state=READY_STATE;
                     tv_small_display.setText("READY");
+                    display_mode=0;
                 }
                 else {
                     start_service=true;
@@ -104,7 +105,11 @@ public class MainActivity<TAG> extends AppCompatActivity {
                     tv_small_display.setText("SERVICE");
                     seconds=0;
                     tv_big_display.setText("00:00:00");
-
+                    if (sb_throttle.getProgress()>RPM_OKAY && sb_throttle.getProgress()<=RPM_TOO_HIGH){
+                        imgv_rpm_indicator.setImageResource(R.drawable.grn_led);
+                    }else if(sb_throttle.getProgress()>RPM_TOO_HIGH){
+                        imgv_rpm_indicator.setImageResource(R.drawable.red_led);
+                    }
                 }
             }
         });
@@ -147,9 +152,6 @@ public class MainActivity<TAG> extends AppCompatActivity {
                     public void onProgressChanged(SeekBar seekBar, int progress, boolean b) {
                         progress_value=progress;
                         tv_rpm.setText(progress_value +" rpm");
-
-
-
                        if(progress_value<RPM_SERVICE_START){rpm_status= 0;}
                         else if(progress_value<RPM_OKAY){rpm_status=1;}
                         else if(progress_value<RPM_TOO_HIGH) {rpm_status=2;}
@@ -198,11 +200,10 @@ public class MainActivity<TAG> extends AppCompatActivity {
                 int minutes=(seconds%3600)/60;
                 int secs=seconds%60;
                 String time=String.format("%02d:%02d:%02d",hours,minutes,secs);
-                if(display_mode==0 && state==READY_STATE){tv_big_display.setText(time);}
-
                 hashCode= Math.abs(Long.valueOf(Math.abs(time.hashCode())*100));
                 String str_hash=Long.toString(hashCode);
 
+                if(display_mode==0 && state==READY_STATE){tv_big_display.setText(time);}
 
                 if(display_mode==1 && state==READY_STATE){tv_big_display.setText("#"+str_hash);}
 
